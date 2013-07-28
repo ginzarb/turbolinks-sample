@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p> 
+
+<% title('show user') %> 
+<% description('show user') %> 
+<% keywords('show user') %> 
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @user.age %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

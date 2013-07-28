@@ -1,0 +1,40 @@
+<% title('top page') %> 
+<% description('top page') %> 
+<% keywords('index') %> 
+
+<h3>Link to campaign page</h3> 
+<%= link_to 'campaign1', campaign1_url %><br />
+<%= link_to 'campaign2(no turboklink)', campaign2_url, "data-no-turbolink" => '1' %>
+<br /><br />
+<h3>Redirect</h3> 
+<%= link_to 'redirect to google', redirect_url(next_url: 'https://www.google.co.jp/') %><br />
+<%= link_to 'redirect to campaing1', redirect_url(next_url: campaign1_url) %><br />
+<br /><br />
+<h3>Listing users</h3> 
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.age %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User', new_user_path %>

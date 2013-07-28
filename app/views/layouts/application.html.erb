@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>  
+
+  <title><%= yield :title %></title>
+  <meta name="description" content="<%= yield :description %>">
+  <meta name="keywords" content="<%= yield :keywords %>">  
+  <script> 
+    $(document).ready(function(){ 
+      console.log("jquery ready");
+      alert("jquery ready");
+    }); 
+  
+    $(document).on("page:change", function(event){
+      console.log("page:change");
+    });  
+
+    $(document).on("page:fetch", function(event){
+      console.log("page:fetch");
+    });  
+
+    $(document).on("page:receive", function(event){
+      console.log("page:receive");
+    });  
+
+    $(document).on("page:load", function(event){
+      console.log("page:load");
+    }); 
+  </script>
+  </script>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
